@@ -74,7 +74,7 @@ else(WIN32)
     IOLegacy
     IOPLY
     IOXML
-    vtkGUISupportQt
+    GUISupportQt
   REQUIRED NO_MODULE)
 endif(WIN32)
 
