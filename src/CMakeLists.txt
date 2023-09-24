@@ -40,10 +40,8 @@ set(ENGRID_VERSION ${ENGRID_MAJOR_VERSION}.${ENGRID_MINOR_VERSION}.${ENGRID_PATC
 exec_program(
     "git"
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ARGS "describe"
+    ARGS "describe --always"
     OUTPUT_VARIABLE GIT_SHA1)
-string(REGEX MATCH "-g.*$" GIT_SHA1 ${GIT_SHA1})
-string(REGEX REPLACE "[-g]" "" GIT_SHA1 ${GIT_SHA1} )
 add_definitions( -DGIT_SHA1="${GIT_SHA1}" )
 
 exec_program(
